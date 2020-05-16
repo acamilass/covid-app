@@ -10,19 +10,23 @@ import { CountryReport } from 'src/app/common/interfaces/report.interface';
 export class HomeComponent implements OnInit {
 
   public brazil;
+  public unitedStates;
+  public china;
+  public italy;
 
   constructor(private reportService: ReportService) { }
 
   ngOnInit(): void {
     this.getAll();
     this.getBrazil();
+    this.getUsa();
+    this.getChina();
+    this.getItaly();
   }
 
   getAll() {
     this.reportService.getAll().subscribe(res => {
       console.log(res);
-    }, err => {
-      console.log(err);
     });
   }
 
@@ -30,8 +34,25 @@ export class HomeComponent implements OnInit {
     this.reportService.getBrazil().subscribe((country: CountryReport) => {
       this.brazil = country;
       console.log(this.brazil);
-    }, err => {
-      console.log(err);
+    });
+  }
+
+  getUsa() {
+    this.reportService.getUsa().subscribe((country: CountryReport) => {
+      this.unitedStates = country;
+    });
+  }
+
+  getChina() {
+    this.reportService.getChina().subscribe((country: CountryReport) => {
+      this.china = country;
+    });
+  }
+
+  getItaly() {
+    this.reportService.getItaly().subscribe((country: CountryReport) => {
+      this.italy = country;
+      console.log(country);
     });
   }
 }

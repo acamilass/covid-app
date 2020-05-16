@@ -18,4 +18,19 @@ export class ReportService {
     return this.http.get(`${BASE_URL}/brazil`)
       .pipe(map((res: any) => res.data));
   }
+
+  getUsa() {
+    return this.http.get(`${BASE_URL}/us`)
+      .pipe(map((res: any) => res.data));
+  }
+
+  getChina() {
+    return this.http.get(`${BASE_URL}/china`)
+      .pipe(map((res: any) => res.data));
+  }
+
+  getItaly() {
+    return this.http.get(`${BASE_URL}/italy`)
+      .pipe(map((res: any) => res.data));
+  }
 }

@@ -1,0 +1,41 @@
+.card {
+    height: 200px;
+    width: 300px;
+    padding: 10px;
+    margin: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+    border-radius: 5px;
+
+    &__title {
+        display: flex;
+        border-bottom: 1px solid #ddd;
+
+        &--icon {
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        h1 {
+            margin-bottom: 0;
+            font-size: 18px;
+        }
+    }
+
+    &__body {
+        margin-top: 10px;
+
+        &--text {
+            margin-bottom: 5px;
+
+            label {
+                margin-right: 5px;
+                font-weight: 500;
+            }
+
+            span {
+                font-weight: 100;
+            }
+        }
+    }
+}
