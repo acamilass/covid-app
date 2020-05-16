@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ReportService } from 'src/app/common/services/report.service';
 import { CountryReport } from 'src/app/common/interfaces/report.interface';
+import { StateReport } from 'src/app/common/interfaces/state-report.interface';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +14,8 @@ export class HomeComponent implements OnInit {
   public unitedStates;
   public china;
   public italy;
+  public statesData: StateReport;
+  displayedColumns: string[] = ['state-flag', 'state-name', 'confirmed'];
 
   constructor(private reportService: ReportService) { }
 
@@ -25,15 +28,15 @@ export class HomeComponent implements OnInit {
   }
 
   getAll() {
-    this.reportService.getAll().subscribe(res => {
-      console.log(res);
+    this.reportService.getAll().subscribe((states: StateReport) => {
+      this.statesData = states;
+      console.log(states);
     });
   }
 
   getBrazil() {
     this.reportService.getBrazil().subscribe((country: CountryReport) => {
       this.brazil = country;
-      console.log(this.brazil);
     });
   }
 
@@ -52,7 +55,6 @@ export class HomeComponent implements OnInit {
   getItaly() {
     this.reportService.getItaly().subscribe((country: CountryReport) => {
       this.italy = country;
-      console.log(country);
     });
   }
 }

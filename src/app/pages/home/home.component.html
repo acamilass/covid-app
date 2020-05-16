@@ -7,7 +7,35 @@
             ></app-card>
         </div>
         <div class="home__column--row">
-            Estados
+            <div class="card-states">
+                <table mat-table [dataSource]="statesData">
+                    <ng-container matColumnDef="state-flag">
+                      <th mat-header-cell *matHeaderCellDef></th>
+                      <td mat-cell *matCellDef="let element">
+                          <img 
+                            class="card-states__flag" 
+                            src="https://devarthurribeiro.github.io/covid19-brazil-api/static/flags/{{ element.uf }}.png" 
+                            alt=""
+                          >
+                      </td>
+                    </ng-container>
+                  
+                    <ng-container matColumnDef="state-name">
+                      <th mat-header-cell *matHeaderCellDef> Estado </th>
+                      <td mat-cell *matCellDef="let element"> {{ element.state }} </td>
+                    </ng-container>
+                  
+                    <ng-container matColumnDef="confirmed">
+                      <th mat-header-cell *matHeaderCellDef> Confirmados </th>
+                      <td mat-cell *matCellDef="let element"> {{ element.cases }} </td>
+                    </ng-container>
+                  
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                  </table>
+                  
+                  
+            </div>
         </div>
     </div>
 

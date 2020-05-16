@@ -11,7 +11,8 @@ export class ReportService {
   constructor(private http: HttpClient) { }
 
   getAll() {
-    return this.http.get(BASE_URL);
+    return this.http.get(BASE_URL)
+      .pipe(map((res: any) => res.data));
   }
 
   getBrazil() {
