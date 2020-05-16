@@ -1,0 +1,41 @@
+<div class="home">
+    <div class="home__column">
+        <div class="home__column--row">
+            <div class="card">
+                <div class="card__title">
+                    <img class="card__title--icon" src="assets/brazil-flag.png" alt="">
+                    <h1>Brasil</h1>
+                </div>
+                <div class="card__body">
+                    <div class="card__body--text">
+                        <label for="cases">Casos:</label>
+                        <span id="cases">{{ brazil?.cases }}</span>
+                    </div>
+                    <div class="card__body--text">
+                        <label for="confirmed">Confirmados:</label>
+                        <span id="confirmed">{{ brazil?.confirmed }}</span>
+                    </div>
+                    <div class="card__body--text">
+                        <label for="recovered">Recuperados:</label>
+                        <span id="recovered">{{ brazil?.recovered }}</span>
+                    </div>
+                    <div class="card__body--text">
+                        <label for="deaths">Mortes:</label>
+                        <span id="deaths">{{ brazil?.deaths }}</span>
+                    </div>
+                    <div class="card__body--text">
+                        <label for="updated">Última atualização:</label>
+                        <span id="updated">{{ brazil?.updated_at | date: 'dd/MM/yyyy HH:mm' }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="home__column--row">
+            Estados
+        </div>
+    </div>
+
+    <div class="home__column">
+        Outros países
+    </div>
+</div>
