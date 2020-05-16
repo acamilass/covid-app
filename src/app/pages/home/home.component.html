@@ -14,16 +14,16 @@
     <div class="home__column">
         <div class="home__column--row">
             <app-card
+            countryFlag="assets/china-flag.png"
+            [countryData]="china"
+            ></app-card>
+            <app-card
+            countryFlag="assets/italy-flag.png"
+            [countryData]="italy"
+            ></app-card>
+            <app-card
                 countryFlag="assets/us-flag2.png"
                 [countryData]="unitedStates"
-            ></app-card>
-            <app-card
-                countryFlag="assets/china-flag.png"
-                [countryData]="china"
-            ></app-card>
-            <app-card
-                countryFlag="assets/italy-flag.png"
-                [countryData]="italy"
             ></app-card>
         </div>
     </div>
