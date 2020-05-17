@@ -10,32 +10,32 @@ export class ReportService {
 
   constructor(private http: HttpClient) { }
 
-  getAll() {
+  statesReport() {
     return this.http.get(BASE_URL)
       .pipe(map((res: any) => res.data));
   }
 
-  getBrazil() {
+  brazilReport() {
     return this.http.get(`${BASE_URL}/brazil`)
       .pipe(map((res: any) => res.data));
   }
 
-  getUsa() {
+  usaReport() {
     return this.http.get(`${BASE_URL}/us`)
       .pipe(map((res: any) => res.data));
   }
 
-  getChina() {
+  chinaReport() {
     return this.http.get(`${BASE_URL}/china`)
       .pipe(map((res: any) => res.data));
   }
 
-  getItaly() {
+  italyReport() {
     return this.http.get(`${BASE_URL}/italy`)
       .pipe(map((res: any) => res.data));
   }
 
-  getAllCountries() {
+  countriesReport() {
     return this.http.get(`${BASE_URL}/countries`)
       .pipe(map((res: any) => res.data));
   }

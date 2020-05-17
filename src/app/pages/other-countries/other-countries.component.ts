@@ -24,10 +24,9 @@ export class OtherCountriesComponent implements OnInit {
   }
 
   getAllCountries() {
-    this.reportService.getAllCountries().subscribe((countries: CountryReport) => {
+    this.reportService.countriesReport().subscribe((countries: CountryReport) => {
       this.isLoading = false;
       this.allCountries = countries;
     });
   }
-
 }

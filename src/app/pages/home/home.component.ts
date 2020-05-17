@@ -24,48 +24,37 @@ export class HomeComponent implements OnInit {
   color: ThemePalette = 'primary';
   mode: ProgressSpinnerMode = 'indeterminate';
 
-
   constructor(private reportService: ReportService) { }
 
   ngOnInit(): void {
-    this.getAll();
-    this.getBrazil();
-    this.getUsa();
-    this.getChina();
-    this.getItaly();
+    this.statesReport();
+    this.countriesReport();
   }
 
-  getAll() {
-    this.reportService.getAll().subscribe((states: StateReport) => {
+  statesReport() {
+    this.reportService.statesReport().subscribe((states: StateReport) => {
       this.isLoading = false;
       this.statesData = states;
-      console.log(states);
     });
   }
 
-  getBrazil() {
-    this.reportService.getBrazil().subscribe((country: CountryReport) => {
+  countriesReport() {
+    this.reportService.brazilReport().subscribe((country: CountryReport) => {
       this.isLoading = false;
       this.brazil = country;
     });
-  }
 
-  getUsa() {
-    this.reportService.getUsa().subscribe((country: CountryReport) => {
+    this.reportService.usaReport().subscribe((country: CountryReport) => {
       this.isLoading = false;
       this.unitedStates = country;
     });
-  }
 
-  getChina() {
-    this.reportService.getChina().subscribe((country: CountryReport) => {
+    this.reportService.chinaReport().subscribe((country: CountryReport) => {
       this.isLoading = false;
       this.china = country;
     });
-  }
 
-  getItaly() {
-    this.reportService.getItaly().subscribe((country: CountryReport) => {
+    this.reportService.italyReport().subscribe((country: CountryReport) => {
       this.isLoading = false;
       this.italy = country;
     });
