@@ -2,13 +2,21 @@
     <div class="home__column">
         <div class="home__column--row">
             <app-card
+                [isLoading]="isLoading"
                 countryFlag="assets/brazil-flag.png" 
                 [countryData]="brazil"
             ></app-card>
         </div>
         <div class="home__column--row">
             <div class="card-states">
-                <table mat-table [dataSource]="statesData">
+                <div class="card-states__spinner" *ngIf="isLoading">
+                    <mat-progress-spinner
+                        [color]="color"
+                        [mode]="mode"
+                        [diameter]="50"
+                    ></mat-progress-spinner>
+                </div>
+                <table mat-table [dataSource]="statesData" *ngIf="!isLoading">
                     <ng-container matColumnDef="state-flag">
                       <th mat-header-cell *matHeaderCellDef></th>
                       <td mat-cell *matCellDef="let element">
@@ -42,14 +50,17 @@
     <div class="home__column">
         <div class="home__column--row">
             <app-card
-            countryFlag="assets/china-flag4.png"
-            [countryData]="china"
+                [isLoading]="isLoading"
+                countryFlag="assets/china-flag4.png"
+                [countryData]="china"
             ></app-card>
             <app-card
-            countryFlag="assets/italy-flag.png"
-            [countryData]="italy"
+                [isLoading]="isLoading"
+                countryFlag="assets/italy-flag.png"
+                [countryData]="italy"
             ></app-card>
             <app-card
+                [isLoading]="isLoading"
                 countryFlag="assets/us-flag2.png"
                 [countryData]="unitedStates"
             ></app-card>

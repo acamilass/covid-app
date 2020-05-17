@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ReportService } from 'src/app/common/services/report.service';
 import { CountryReport } from 'src/app/common/interfaces/report.interface';
 import { StateReport } from 'src/app/common/interfaces/state-report.interface';
+import { ThemePalette } from '@angular/material/core';
+import { ProgressSpinnerMode } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-home',
@@ -17,6 +19,12 @@ export class HomeComponent implements OnInit {
   public statesData: StateReport;
   displayedColumns: string[] = ['state-flag', 'state-name', 'confirmed'];
 
+  public isLoading: boolean = true;
+
+  color: ThemePalette = 'primary';
+  mode: ProgressSpinnerMode = 'indeterminate';
+
+
   constructor(private reportService: ReportService) { }
 
   ngOnInit(): void {
@@ -29,6 +37,7 @@ export class HomeComponent implements OnInit {
 
   getAll() {
     this.reportService.getAll().subscribe((states: StateReport) => {
+      this.isLoading = false;
       this.statesData = states;
       console.log(states);
     });
@@ -36,24 +45,28 @@ export class HomeComponent implements OnInit {
 
   getBrazil() {
     this.reportService.getBrazil().subscribe((country: CountryReport) => {
+      this.isLoading = false;
       this.brazil = country;
     });
   }
 
   getUsa() {
     this.reportService.getUsa().subscribe((country: CountryReport) => {
+      this.isLoading = false;
       this.unitedStates = country;
     });
   }
 
   getChina() {
     this.reportService.getChina().subscribe((country: CountryReport) => {
+      this.isLoading = false;
       this.china = country;
     });
   }
 
   getItaly() {
     this.reportService.getItaly().subscribe((country: CountryReport) => {
+      this.isLoading = false;
       this.italy = country;
     });
   }

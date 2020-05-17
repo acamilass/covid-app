@@ -1,5 +1,5 @@
 .card {
-    height: 200px;
+    // height: 200px;
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
@@ -37,5 +37,11 @@
                 font-weight: 100;
             }
         }
+    }
+
+    &__spinner {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
     }
 }

@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CardComponent } from './common/components/card/card.component';
 import { HeaderComponent } from './common/components/header/header.component';
 import { MatTableModule } from '@angular/material/table';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MatTableModule } from '@angular/material/table';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
