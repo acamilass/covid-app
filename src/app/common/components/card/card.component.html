@@ -8,7 +8,7 @@
     </div>
     <div *ngIf="!isLoading">
         <div class="card__title">
-            <img class="card__title--icon" src="{{ countryFlag }}" alt="">
+            <img class="card__title--icon" [ngClass]="{'none': !countryFlag}" src="{{ countryFlag }}" alt="">
             <h1>{{ countryData?.country }}</h1>
         </div>
         <div class="card__body">

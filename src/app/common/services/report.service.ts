@@ -34,4 +34,9 @@ export class ReportService {
     return this.http.get(`${BASE_URL}/italy`)
       .pipe(map((res: any) => res.data));
   }
+
+  getAllCountries() {
+    return this.http.get(`${BASE_URL}/countries`)
+      .pipe(map((res: any) => res.data));
+  }
 }

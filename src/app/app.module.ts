@@ -10,13 +10,15 @@ import { CardComponent } from './common/components/card/card.component';
 import { HeaderComponent } from './common/components/header/header.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { OtherCountriesComponent } from './pages/other-countries/other-countries.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CardComponent,
-    HeaderComponent
+    HeaderComponent,
+    OtherCountriesComponent
   ],
   imports: [
     BrowserModule,

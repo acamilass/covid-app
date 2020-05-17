@@ -1,0 +1,21 @@
+.other-countries {
+    display: flex;
+    justify-content: space-around;
+
+    &__column {
+        width: 40vw;
+        
+        &--spinner {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .other-countries {
+        &__column {
+            width: 90vw;
+        }
+    }
+}

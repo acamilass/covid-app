@@ -1,0 +1,18 @@
+<div class="other-countries">
+    <div class="other-countries__column">
+        <div class="other-countries__column--spinner">
+            <mat-progress-spinner
+                *ngIf="isLoading"
+                [color]="color"
+                [mode]="mode"
+                [diameter]="50"
+            ></mat-progress-spinner>
+        </div>
+        <app-card
+            *ngFor="let country of allCountries"
+            [isLoading]="isLoading"
+            countryFlag=""
+            [countryData]="country"
+        ></app-card>
+    </div>
+</div>
