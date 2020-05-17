@@ -11,6 +11,8 @@ import { HeaderComponent } from './common/components/header/header.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { OtherCountriesComponent } from './pages/other-countries/other-countries.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { FooterComponent } from './common/components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { OtherCountriesComponent } from './pages/other-countries/other-countries
     HomeComponent,
     CardComponent,
     HeaderComponent,
-    OtherCountriesComponent
+    OtherCountriesComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,8 @@ import { OtherCountriesComponent } from './pages/other-countries/other-countries
     BrowserAnimationsModule,
     HttpClientModule,
     MatTableModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
