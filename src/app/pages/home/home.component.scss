@@ -17,6 +17,10 @@
 
     table {
         width: 100%;
+
+        td {
+            padding-left: 0;
+        }
     }
 
     &__flag {
